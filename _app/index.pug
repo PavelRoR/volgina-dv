@@ -15,10 +15,19 @@
 -var group = '';
 -var formId = '';
 -var formVc = '';
+-var href = '#Modal';
 //- -var footer_title = true
 //- -var oferta = 'https://mastervision.su/oferta.docx'
 
-<!DOCTYPE html>
+mixin b(cl,clb,href,p,target,id)
+	.button-wrapper(class=cl)
+		a.button(class=clb href=href target=target id=id)=p
+mixin gt(cl,h3)
+	h3.general-title(class=cl)=h3
+mixin imgs(cl,src,alt)
+	img(class=cl src=path+src alt=alt)
+
+doctype html
 html(lang="ru")
 	head
 		include pug/head
