@@ -73,10 +73,9 @@ footer
 	color: #000
 	width: auto
 	font-size: 24px
-	font-weight: bold
-	padding 24px 65px
+	padding 19px 65px
 	background-color: #B2DFBE
-	border-radius: 38px
+	border-radius: 40px
 	transition: all .3s ease
 	&:focus
 		text-decoration none
@@ -92,24 +91,30 @@ footer
 		min-width 260px
 		font-size: 20px
 .general-title
+	text-align center
 	font-family: PF
 	font-size: 40px
-	margin-bottom: 70px
-	position relative
-	text-align center
-	&:before
-		content: ''
-		display block
-		position absolute
-		width 269px
-		height: 7px
-		bottom: 0
+	margin-bottom: 80px
+	span
+		position relative
+		display inline-block
+		&:before
+			content: ''
+			display block
+			position absolute
+			width 269px
+			height: 5px
+			bottom: -10px
 	&-green
-		&:before
-			background-color: #B3DFBE
+		span
+			&:before
+				right -200px
+				background-color: #B3DFBE
 	&-brown
-		&:before
-			background-color: #D0B899
+		span
+			&:before
+				left -200px
+				background-color: #D0B899
 	@media screen and (max-width: 560px)
 		font-size: 26px
 		margin-bottom: 35px
@@ -119,7 +124,7 @@ footer
 	li
 		list-style: none
 		position relative
-		padding-left: 46px
+		padding-left: 40px
 		margin-bottom: 30px
 		font-size: 20px
 		@media screen and (max-width: 991px)
@@ -140,9 +145,13 @@ footer
 			width 18px
 			height: 18px
 			background-color: #B3DFBE
-			top 3px
+			top 6px
 			left 0
 			@media screen and (max-width: 560px)
 				width 12px
 				height: 12px
 				top 6px
+.general-text
+	margin-bottom: 20px
+	&:last-of-type
+		margin-bottom: 0
