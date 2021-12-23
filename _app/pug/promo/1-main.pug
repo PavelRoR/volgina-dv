@@ -4,7 +4,10 @@
 //- 			iframe(src="https://www.youtube.com/embed/"+video+"?autoplay=1&mute=1&modestbranding=1" allowfullscreen)
 //- 	.col-md-6
 .row
-	.col-md-8
+	.col-md-5.col-md-push-7
+		.video-wrapper.video-wrapper-main
+			iframe(src="https://www.youtube.com/embed/"+video+"?autoplay=1&mute=1&modestbranding=1" allowfullscreen)
+	.col-md-7.col-md-pull-5
 		p.main-text Прямо сейчас регистрируйтесь на наш телеграм, в котором с первых минут начнется процесс обучения, и где мы будем делиться с Вами секретной информацией. 
 			br
 			| Также Вы там получите 
@@ -16,6 +19,5 @@
 			span Перейдите в чат-бота
 		a.button.button-main(href=bot) Подписаться 
 			img(src=path+"img/icons/tg.png" alt="Telegram")
-	.col-md-4
-		.main-img
-			+imgs('', 'img/images/branch-2.png', 'Ветка')
+.main-img
+	+imgs('', 'img/images/branch-2.png', 'Ветка')

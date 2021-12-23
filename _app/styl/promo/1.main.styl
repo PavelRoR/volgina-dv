@@ -29,22 +29,25 @@
 		@media screen and (max-width 386px)
 			margin-bottom 15px
 			font-size: 18px
-// .video-wrapper-main
-// 	margin-bottom: 30px
-// 	width 100%
-// 	max-width 560px
-// 	@media screen and (max-width 560px)
-// 		margin-bottom: 20px
+.video-wrapper-main
+	width 100%
+	max-width 560px
+	@media screen and (max-width 991px)
+		margin-bottom: 30px
+	@media screen and (max-width 560px)
+		margin-bottom: 20px
 .main-img
 	position relative
-	padding-top: 100%
+	z-index -1
+	@media screen and (max-width 991px)
+		padding-top: 100%
 	&:before
 		content: ''
 		display block
 		position absolute
 		width 600px
 		height: 600px
-		top -100px
+		top -300px
 		right -250px
 		border-radius: 50%
 		background-color: rgba(#D0B899, .1)
@@ -66,7 +69,7 @@
 		width 580px
 		@media screen and (max-width 1199px)
 			right -270px
-			top -100px
+			// top -100px
 		@media screen and (max-width 991px)
 			top auto
 			top 100px

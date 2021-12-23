@@ -11,10 +11,10 @@
 -var noref = true;
 -var tk = true;
 -var ah = true;
--var action = '';
--var group = '';
--var formId = '';
--var formVc = '';
+-var action = 'https://shop.mv-centr.ru/?r=personal/newsletter/sub/add&id=25863&lg=ru&Contact[id_newsletter]=';
+-var group = '551';
+-var formId = '368';
+-var formVc = '4208246853';
 -var href = '#Modal';
 //- -var footer_title = true
 //- -var oferta = 'https://mastervision.su/oferta.docx'
@@ -43,8 +43,10 @@ html(lang="ru")
 			include pug/main/5-plan
 			include pug/main/6-lets
 			include pug/main/7-author
-			include pug/main/8-revs
-			include pug/main/9-last
+			.back-wrap-1
+				include pug/main/8-revs
+				include pug/main/9-last
+		include pug/base/2-footer
 			include pug/main/10-modal
 		include pug/base/3-scripts
 		//- include pug/scripts/chat
