@@ -77,6 +77,8 @@ footer
 	background-color: #B2DFBE
 	border-radius: 40px
 	transition: all .3s ease
+	position relative
+	z-index 60
 	&:focus
 		text-decoration none
 		color #000
@@ -86,9 +88,12 @@ footer
 		background-color: #B2DFBE - 20%
 	@media screen and (max-width 1199px)
 		padding 24px 58px
+	@media screen and (max-width 991px)
+		&-wrapper
+			text-align center
 	@media screen and (max-width 560px)
 		padding 24px 25px
-		min-width 260px
+		min-width 220px
 		font-size: 20px
 .general-title
 	text-align center
@@ -105,19 +110,35 @@ footer
 			width 269px
 			height: 5px
 			bottom: -10px
+			@media screen and (max-width 991px)
+				width 169px
+			@media screen and (max-width 386px)
+				width 69px
 	&-green
 		span
 			&:before
 				right -200px
 				background-color: #B3DFBE
+				@media screen and (max-width 1199px)
+					right -100px
+				@media screen and (max-width 991px)
+					right 0 
+					left 0
+					margin 0 auto
 	&-brown
 		span
 			&:before
 				left -200px
 				background-color: #D0B899
+				@media screen and (max-width 1199px)
+					left -100px
+				@media screen and (max-width 991px)
+					right 0 
+					left 0
+					margin 0 auto
 	@media screen and (max-width: 560px)
-		font-size: 26px
-		margin-bottom: 35px
+		font-size: 28px
+		margin-bottom: 50px
 .general-img
 	position absolute
 .general-list
@@ -150,7 +171,7 @@ footer
 			@media screen and (max-width: 560px)
 				width 12px
 				height: 12px
-				top 6px
+				top 8px
 .general-text
 	margin-bottom: 20px
 	&:last-of-type

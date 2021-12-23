@@ -3,8 +3,17 @@
 	background-repeat no-repeat
 	background-position: bottom center
 	background-size 100% 100%
+	@media screen and (max-width 991px)
+		background-image: none
+		background-color: #E7DDCF
 #revs
 	padding 120px 0
+	@media screen and (max-width 1199px)
+		padding 90px 0
+	@media screen and (max-width 560px)
+		padding 60px 0
+	@media screen and (max-width 386px)
+		padding 40px 0
 .slick-track
 	padding 45px 0
 .slick-slide
@@ -19,15 +28,6 @@
 	@media screen and (max-width: 560px)
 		max-width none
 		width 96%
-// .text-rev-link
-// 	display block
-	// padding 20px
-	// 
-	// padding: 98px 22px;
-	// background-image: url('../img/icons/iphone.png');
-	// background-repeat: no-repeat;
-	// background-position: center;
-	// background-size: 100% 100%;
 .text-rev-img
 	border 3px solid #B2DFBE
 	border-radius 20px
@@ -36,7 +36,7 @@
 	width 100%
 	max-width 360px
 	@media screen and (max-width 1199px)
-		width 100%
+		width 90%
 	@media screen and (max-width 767px)
 		height: 100%
 		width auto
