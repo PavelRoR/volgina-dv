@@ -71,11 +71,11 @@ $(document).ready(function() {
         dots: false,
         speed: 300,
         arrows: true,
-        centerPadding: '40px',
+        centerPadding: '0',
         // adaptiveHeight: true,
         centerMode: true,
-        prevArrow: '<button type="button" class="slick-prev">‹</button>',
-        nextArrow: '<button type="button" class="slick-next">›</button>',
+        prevArrow: '<button type="button" class="slick-prev"><span>‹</span></button>',
+        nextArrow: '<button type="button" class="slick-next"><span>›</span></button>',
         responsive: [{
             breakpoint: 768,
             settings: {

@@ -1,0 +1,107 @@
+-var full_1 = '20 000р.';
+-var full_2 = '32 000р.';
+-var full_3 = '44 000р.';
+
+-var sale_1 = '4 000р.';
+-var sale_2 = '4 000р.';
+-var sale_3 = '4 000р.';
+
+-var today_1 = '16 000р.';
+-var today_2 = '28 000р.';
+-var today_3 = '40 000р.';
+
+-var link_1 = 'https://shop.mv-centr.ru/?r=ordering/cart/as1&id=1294&clean=true&lg=ru';
+-var link_2 = 'https://shop.mv-centr.ru/?r=ordering/cart/as1&id=1300&clean=true&lg=ru';
+-var link_3 = 'https://shop.mv-centr.ru/?r=ordering/cart/as1&id=1304&clean=true&lg=ru';
+
+-var prepLink = 'https://shop.mv-centr.ru/?r=ordering/cart/as1&id=1308&clean=true&lg=ru';
+
+section#packets
+	.container
+		+gt('', 'Выберите свой вариант участия')
+		.row
+			.col-md-4
+				.packet
+					.packet-head
+						h4.packet-head-title
+							small пакет
+							| СЕРЕБРО
+					.packet-body
+						p.packet-body-text Для тех, кто хочет освоить основы дистанционного видения и делать прогнозы на бинарные события. Включает в себя: 9 видеоуроков, 3 созвона, домашние задания с проверкой, чат поддержки с кураторами
+						ul.packet-body-list
+							li Знакомство с алгоритмом работы на курсе
+							li I стадия ДВ. Протокол ДВ. Настройка на НЛС
+							li Идеограмма. Гештальты. Связь бессознательного и спонтанного графического изображения
+							li II стадия. Считывание сенсорной информации атмосферы
+							li III стадия. Скетчи. Связь образов и бессознательного
+							li Прогнозирование бинарных событий. Таскерство. Самотаскерство
+					.packet-footer
+						p.cost.cost-full Стоимость:
+							span!=full_1
+						p.cost.cost-sale Скидка:
+							span#sale-1!=sale_1
+						p.cost.cost-today Стоимость сегодня:
+							span#today-1!=today_1
+						+b('', '', link_1, 'Выбрать','_blank', '#link-1')
+			.col-md-4
+				.packet
+					.packet-head
+						h4.packet-head-title
+							small пакет
+							| ЗОЛОТО
+					.packet-body
+						p.packet-body-text Для тех, кто хочет применять  ДВ на практике, считывать события прошлого и будущего, прогнозировать результаты событий. Включает в себя: всё, что входит в пакет СЕРЕБРО + 7 видеоуроков, 3 созвона, тренировка на реальных событиях, домашние задания с проверкой, чат поддержки с кураторами
+						ul.packet-body-list
+							li IV стадия Работа с информацией
+							li Виртуальные инструменты, эфирный двойник. Даузинг
+							li V стадия ДВ. Связь бессознательного и лингвистикой
+							li VI стадия. Считывание событий
+					.packet-footer
+						p.cost.cost-full Стоимость:
+							span!=full_2
+						p.cost.cost-sale Скидка:
+							span#sale-2!=sale_2
+						p.cost.cost-today Стоимость сегодня:
+							span#today-2!=today_2
+						+b('', '', link_2, 'Выбрать','_blank', '#link-2')
+			.col-md-4
+				.packet
+					.packet-head
+						h4.packet-head-title
+							small пакет
+							| ПЛАТИНА
+					.packet-body
+						p.packet-body-text Для тех, кто хочет не только полностью овладеть навыками ДВ, считывать события, но и считывать человека, исцелять себя и других людей, лечить органы в теле с помощью тонкого двойника. Включает в себя: всё, что входит в пакеты СЕРЕБРО и ЗОЛОТО + 6 видеоуроков, 2 созвона, домашние задания с проверкой, чат поддержки с кураторами
+						p.packet-body-text
+							span ДВ-Медицина:
+						ul.packet-body-list
+							li Считывание человека
+							li Считывание характера и эмоций человека
+							li Считывание окружения человека и его профессиональной деятельности. Совместимость
+							li Внутренняя архитектура человека
+							li Голографическая работа по решению проблем здоровья
+					.packet-footer
+						p.cost.cost-full Стоимость:
+							span!=full_3
+						p.cost.cost-sale Скидка:
+							span#sale-3!=sale_3
+					p.cost.cost-today Стоимость сегодня:
+						span#today-3!=today_3
+					+b('', '', link_3, 'Выбрать','_blank', '#link-3')
+		.prepayment
+			h4.prepayment-title Акция!!!
+			p.prepayment-text Платите 1 000р., бонусом получаете 
+				span#prepayment-bonus 1 000р. 
+				br
+				| На счет зачисляется 
+				span#prepayment-credited 2 000р.
+			+b('', 'prepayment-button', prepLink, 'Оплатить 1 000р.', '_blank', 'prepLink')
+		//- |
+		//- |
+		//- <?php if($now < $dates[2]):?>
+		.timer
+			h4.timer-title Скидка уменьшится через:
+			.clock
+		//- |
+		//- |
+		//- <?php endif;?>
