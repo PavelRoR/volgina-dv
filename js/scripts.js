@@ -1,1 +1,88 @@
-$(document).ready((function(){$((function(){var e=$(".check",this),t=$(".input-mail",this),s=$(".alert-message",this);$(".form").on("submit",(function(){var e=$(".check",this),t=$(".alert-message",this),s=$(".input-mail",this);return s.val().match(/.+/)?e.prop("checked")?!(!s.val()||!e)||void 0:(e.next().css({color:"red",transition:"all .4s ease"}),e.next().children().css({color:"red",transition:"all .4s ease"}),t.text("↙ Подтвердите соглашение").slideDown(500),!1):(t.text("Введите email").slideDown(500),!1)})),t.click((function(){s.slideUp(500)})),e.click((function(){e.next().css({color:"#aaa",transition:"all .4s ease"}),e.next().children().css({color:"#aaa",transition:"all .4s ease"}),s.slideUp(500)}))})),$(".button-up").magnificPopup({type:"inline",midClick:!0,mainClass:"mfp-fade"}),$(".text-rev-link").magnificPopup({type:"image",mainClass:"mfp-fade",gallery:{enabled:!0}}),$(".revs-slider-text").slick({autoplay:!1,autoplaySpeed:3e3,slidesToShow:3,slidesToScroll:1,infinite:!0,dots:!1,speed:300,arrows:!0,centerPadding:"0",centerMode:!0,prevArrow:'<button type="button" class="slick-prev"><span>‹</span></button>',nextArrow:'<button type="button" class="slick-next"><span>›</span></button>',responsive:[{breakpoint:768,settings:{slidesToShow:1}}]})}));
+$(document).ready(function() {
+    $(function () {
+        var check = $('.check', this),
+            email = $('.input-mail', this),
+            message = $('.alert-message', this);
+        $(".form").on("submit", function () {
+            var check = $('.check', this),
+                message = $('.alert-message', this),
+                reNone = /.+/,
+                email = $('.input-mail', this);
+            if (!email.val().match(reNone)) {
+                message.text('Введите email').slideDown(500);
+                return false;
+            }
+            if (!check.prop("checked")) {
+                check.next().css({
+                    'color': 'red',
+                    'transition': 'all .4s ease'
+                });
+                check.next().children().css({
+                    'color': 'red',
+                    'transition': 'all .4s ease'
+                });
+                message.text('↙ Подтвердите соглашение').slideDown(500);
+                return false;
+            }
+            if (email.val() && check) {
+
+                // button.text('Отправляем...');
+                // setTimeout(function () {
+                //     button.text('Отправлено!');
+                // }, 500);
+                return true
+            }
+        });
+        email.click(function () {
+            // email.css({"borderColor": "rgb(25, 10, 12)",'transition':'all .4s ease'});
+            message.slideUp(500);
+        });
+        check.click(function () {
+            check.next().css({
+                "color": "#aaa",
+                'transition': 'all .4s ease'
+            });
+            check.next().children().css({
+                "color": "#aaa",
+                'transition': 'all .4s ease'
+            });
+            message.slideUp(500);
+        });
+    });
+    // Модалка
+    $('.button-up').magnificPopup({
+        type: 'inline',
+        midClick: true,
+        mainClass: 'mfp-fade'
+    });
+    $('.text-rev-link').magnificPopup({
+        type: 'image',
+        mainClass: 'mfp-fade',
+        gallery: {
+            enabled: true
+        }
+    });
+    $('.revs-slider-text').slick({
+        autoplay: false,
+        autoplaySpeed: 3000,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: false,
+        speed: 300,
+        arrows: true,
+        centerPadding: '0',
+        // adaptiveHeight: true,
+        centerMode: true,
+        prevArrow: '<button type="button" class="slick-prev"><span>‹</span></button>',
+        nextArrow: '<button type="button" class="slick-next"><span>›</span></button>',
+        responsive: [{
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 1
+            }
+        }]
+    });
+
+/*Конец документа*/
+});

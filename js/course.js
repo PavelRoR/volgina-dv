@@ -1,1 +1,155 @@
-$(document).ready((function(){$("a[href='#prices']").click((function(e){e.preventDefault();var t=$(this).attr("href"),a=$(t).offset().top;$("body,html").animate({scrollTop:a},1500)})),$((function(){var e=new Array(new Date("January 15, 2022 00:00 UTC+3"),new Date("January 15, 2022 00:00 UTC+3"),new Date("January 15, 2022 00:00 UTC+3")),t=new Date,a={name:$("#sale-1"),saleText:new Array("3 000р.","2 500р.")},n={name:$("#sale-2"),saleText:new Array("34 950р.","33 950р.")},r={name:$("#today-1"),todayText:new Array("7 990р.","8 490р.")},o={name:$("#today-2"),todayText:new Array("30 990р.","31 990р.")},s={name:$("#link-1"),linkText:new Array("https://shop.mastervision.su/?r=ordering/cart/as1&id=5657&clean=true&lg=ru","https://shop.mastervision.su/?r=ordering/cart/as1&id=5658&clean=true&lg=ru")},l={name:$("#link-2"),linkText:new Array("https://shop.mastervision.su/?r=ordering/cart/as1&id=5661&clean=true&lg=ru","https://shop.mastervision.su/?r=ordering/cart/as1&id=5662&clean=true&lg=ru")},i={name:$("#prepLink"),linkText:new Array("https://shop.mastervision.su/?r=ordering/cart/as1&id=5665&clean=true&lg=ru","https://shop.mastervision.su/?r=ordering/cart/as1&id=5666&clean=true&lg=ru")};if(t<e[0]){var c=e[0].getTime()/1e3-t.getTime()/1e3;$(".clock").FlipClock(c,{clockFace:"HourlyCounter",countdown:!0,language:"ru",callbacks:{stop:function(){a.name.text(a.saleText[0]),n.name.text(n.saleText[0]),r.name.text(r.todayText[0]),o.name.text(o.todayText[0]),s.name.attr("href",s.linkText[0]),l.name.attr("href",l.linkText[0]),i.name.attr("href",i.linkText[0])}}})}else if(t>=e[0]&&t<e[1]){c=e[1].getTime()/1e3-t.getTime()/1e3;$(".clock").FlipClock(c,{clockFace:"HourlyCounter",countdown:!0,language:"ru",callbacks:{stop:function(){a.name.text(a.saleText[1]),n.name.text(n.saleText[1]),r.name.text(r.todayText[1]),o.name.text(o.todayText[1]),s.name.attr("href",s.linkText[1]),l.name.attr("href",l.linkText[1]),i.name.attr("href",i.linkText[1])}}})}else{(c=e[2].getTime()/1e3-t.getTime()/1e3)<0&&(c=0,$(".timer").remove()),$(".clock").FlipClock(c,{clockFace:"HourlyCounter",countdown:!0,language:"ru",callbacks:{stop:function(){$(".timer").remove()}}})}})),$(".text-rev-link").magnificPopup({type:"image",mainClass:"mfp-fade",gallery:{enabled:!0}}),$(".revs-slider-text").slick({autoplay:!1,autoplaySpeed:3e3,slidesToShow:3,slidesToScroll:1,infinite:!0,dots:!1,speed:300,arrows:!0,centerPadding:"0",centerMode:!0,prevArrow:'<button type="button" class="slick-prev"><span>‹</span></button>',nextArrow:'<button type="button" class="slick-next"><span>›</span></button>',responsive:[{breakpoint:768,settings:{slidesToShow:1}}]})}));
+$(document).ready(function() {
+    /* Якорь */
+    $("a[href='#prices']").click(function (h) {
+        h.preventDefault();
+        var f = $(this).attr("href"),
+            g = $(f).offset().top;
+        $("body,html").animate({
+            scrollTop: g
+        }, 1500)
+    });
+    $(function () {
+        var clock;
+        var dates = new Array(
+            new Date("January 19, 2022 00:00 UTC+3"),
+            new Date("January 20, 2022 00:00 UTC+3"),
+            new Date("January 21, 2022 00:00 UTC+3")
+        );
+
+        var currentDate = new Date();
+
+        var sale1 = {
+            name: $('#sale-1'),
+            saleText: new Array('2 000р.')
+        };
+        var sale2 = {
+            name: $('#sale-2'),
+            saleText: new Array('2 000р.')
+        };
+        var sale3 = {
+            name: $('#sale-3'),
+            saleText: new Array('2 000р.')
+        };
+
+        var today1 = {
+            name: $('#today-1'),
+            todayText: new Array('18 000р.', '20 000р.')
+        };
+        var today2 = {
+            name: $('#today-2'),
+            todayText: new Array('30 000р.', '32 000р.')
+        };
+        var today3 = {
+            name: $('#today-3'),
+            todayText: new Array('42 000р.', '44 000р.')
+        };
+
+        var link1 = {
+            name: $('#link-1'),
+            linkText: new Array('https://shop.mv-centr.ru/?r=ordering/cart/as1&id=1297&clean=true&lg=ru', 'https://shop.mv-centr.ru/?r=ordering/cart/as1&id=1298&clean=true&lg=ru')
+        };
+        var link2 = {
+            name: $('#link-2'),
+            linkText: new Array('https://shop.mv-centr.ru/?r=ordering/cart/as1&id=1301&clean=true&lg=ru', 'https://shop.mv-centr.ru/?r=ordering/cart/as1&id=1302&clean=true&lg=ru')
+        };
+        var link3 = {
+            name: $('#link-3'),
+            linkText: new Array('https://shop.mv-centr.ru/?r=ordering/cart/as1&id=1305&clean=true&lg=ru', 'https://shop.mv-centr.ru/?r=ordering/cart/as1&id=1306&clean=true&lg=ru')
+        };
+        var prepLink = {
+            name: $('#prepLink'),
+            linkText: new Array('https://shop.mv-centr.ru/?r=ordering/cart/as1&id=1309&clean=true&lg=ru', 'https://shop.mv-centr.ru/?r=ordering/cart/as1&id=1310&clean=true&lg=ru')
+        };
+
+        if (currentDate < dates[0]) {
+            var futureDate = dates[0];
+            var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
+            clock = $('.clock').FlipClock(diff, {
+                clockFace: 'HourlyCounter',
+                countdown: true,
+                language: 'ru',
+                callbacks: {
+                    stop: function () {
+                        sale1.name.text(sale1.saleText[0]);
+                        sale2.name.text(sale2.saleText[0]);
+                        sale3.name.text(sale3.saleText[0]);
+                        today1.name.text(today1.todayText[0]);
+                        today2.name.text(today2.todayText[0]);
+                        today3.name.text(today3.todayText[0]);
+                        link1.name.attr('href', link1.linkText[0]);
+                        link2.name.attr('href', link2.linkText[0]);
+                        link3.name.attr('href', link3.linkText[0]);
+                        prepLink.name.attr('href', prepLink.linkText[0]);
+                    }
+                }
+            });
+        } else if ((currentDate >= dates[0]) && (currentDate < dates[1])) {
+            var futureDate = dates[1];
+            var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
+            clock = $('.clock').FlipClock(diff, {
+                clockFace: 'HourlyCounter',
+                countdown: true,
+                language: 'ru',
+                callbacks: {
+                    stop: function () {
+                        link1.name.attr('href', link1.linkText[1]);
+                        link2.name.attr('href', link2.linkText[1]);
+                        link3.name.attr('href', link3.linkText[1]);
+                        prepLink.name.attr('href', prepLink.linkText[1]);
+                        $('.cost-sale, .cost-today, .timer').remove();
+                        $('.cost-full span').addClass('unbroken');
+                    }
+                }
+            });
+        } else {
+            var futureDate = dates[2];
+            var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
+
+            if (diff < 0) {
+                diff = 0;
+                $('.prepayment').remove();
+            }
+
+            clock = $('.clock').FlipClock(diff, {
+                clockFace: 'HourlyCounter',
+                countdown: true,
+                language: 'ru',
+                callbacks: {
+                    stop: function () {
+                        $('.prepayment').remove();
+                    }
+                }
+            });
+        }
+    });
+    $('.text-rev-link').magnificPopup({
+        type: 'image',
+        mainClass: 'mfp-fade',
+        gallery: {
+            enabled: true
+        }
+    });
+    $('.revs-slider-text').slick({
+        autoplay: false,
+        autoplaySpeed: 3000,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: false,
+        speed: 300,
+        arrows: true,
+        centerPadding: '0',
+        // adaptiveHeight: true,
+        centerMode: true,
+        prevArrow: '<button type="button" class="slick-prev"><span>‹</span></button>',
+        nextArrow: '<button type="button" class="slick-next"><span>›</span></button>',
+        responsive: [{
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 1
+            }
+        }]
+    });
+
+/*Конец документа*/
+});

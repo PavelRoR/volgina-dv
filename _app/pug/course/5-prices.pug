@@ -2,21 +2,21 @@
 -var full_2 = '32 000р.';
 -var full_3 = '44 000р.';
 
--var sale_1 = '4 000р.';
--var sale_2 = '4 000р.';
--var sale_3 = '4 000р.';
+-var sale_1 = '<?=$sale1;?>';
+-var sale_2 = '<?=$sale2;?>';
+-var sale_3 = '<?=$sale3;?>';
 
--var today_1 = '16 000р.';
--var today_2 = '28 000р.';
--var today_3 = '40 000р.';
+-var today_1 = '<?=$today1;?>';
+-var today_2 = '<?=$today2;?>';
+-var today_3 = '<?=$today3;?>';
 
--var link_1 = 'https://shop.mv-centr.ru/?r=ordering/cart/as1&id=1294&clean=true&lg=ru';
--var link_2 = 'https://shop.mv-centr.ru/?r=ordering/cart/as1&id=1300&clean=true&lg=ru';
--var link_3 = 'https://shop.mv-centr.ru/?r=ordering/cart/as1&id=1304&clean=true&lg=ru';
+-var link_1 = '<?=$link1;?>';
+-var link_2 = '<?=$link2;?>';
+-var link_3 = '<?=$link3;?>';
 
--var prepLink = 'https://shop.mv-centr.ru/?r=ordering/cart/as1&id=1308&clean=true&lg=ru';
+-var prepLink = '<?=$prepLink;?>';
 
-section#packets
+section#prices
 	.container
 		.content
 			+imgs('general-img general-img-packets-1', 'img/images/branch-3.png', 'Ветка')
@@ -24,7 +24,7 @@ section#packets
 			+gt('general-title-brown', 'Выберите свой вариант участия')
 			.row
 				.col-md-4
-					.packet
+					.packet.packet-1
 						.packet-head
 							h4.packet-head-title
 								small пакет
@@ -32,24 +32,32 @@ section#packets
 						.packet-body
 							p.packet-body-text Для тех, кто хочет освоить основы дистанционного видения и делать прогнозы на бинарные события. 
 								span Включает в себя:
-								|  9 видеоуроков, 3 созвона, домашние задания с проверкой, чат поддержки с кураторами
 							ul.packet-body-list
-								li Знакомство с алгоритмом работы на курсе
-								li I стадия ДВ. Протокол ДВ. Настройка на НЛС
-								li Идеограмма. Гештальты. Связь бессознательного и спонтанного графического изображения
-								li II стадия. Считывание сенсорной информации атмосферы
-								li III стадия. Скетчи. Связь образов и бессознательного
-								li Прогнозирование бинарных событий. Таскерство. Самотаскерство
+								li 9 видеоуроков
+								li 3 созвона
+								li домашние задания с проверкой
+								li чат поддержки с кураторами
 						.packet-footer
+							|
+							<?php if($now<$dates[1]){;?>
 							p.cost.cost-full Стоимость:
 								span!=full_1
 							p.cost.cost-sale Скидка:
 								span#sale-1!=sale_1
 							p.cost.cost-today Стоимость сегодня:
 								span#today-1!=today_1
-							+b('', 'button-cost', link_1, 'Выбрать','_blank', '#link-1')
+							+b('', 'button-cost', link_1, 'Выбрать','_blank', 'link-1')
+							|
+							|
+							<?php } else {;?>
+							p.cost.cost-full Стоимость:
+								span.unbroken!=full_1
+							+b('', 'button-cost', link_1, 'Выбрать','_blank')
+							|
+							|
+							<?php };?>
 				.col-md-4
-					.packet
+					.packet.packet-2
 						.packet-head
 							h4.packet-head-title
 								small пакет
@@ -57,22 +65,34 @@ section#packets
 						.packet-body
 							p.packet-body-text Для тех, кто хочет применять  ДВ на практике, считывать события прошлого и будущего, прогнозировать результаты событий. 
 								span Включает в себя: 
-								|  всё, что входит в пакет СЕРЕБРО + 7 видеоуроков, 3 созвона, тренировка на реальных событиях, домашние задания с проверкой, чат поддержки с кураторами
 							ul.packet-body-list
-								li IV стадия Работа с информацией
-								li Виртуальные инструменты, эфирный двойник. Даузинг
-								li V стадия ДВ. Связь бессознательного и лингвистикой
-								li VI стадия. Считывание событий
+								li всё, что входит в пакет СЕРЕБРО
+								li 7 видеоуроков
+								li 3 созвона
+								li тренировка на реальных событиях
+								li домашние задания с проверкой
+								li чат поддержки с кураторами
 						.packet-footer
+							|
+							<?php if($now<$dates[1]){;?>
 							p.cost.cost-full Стоимость:
 								span!=full_2
 							p.cost.cost-sale Скидка:
 								span#sale-2!=sale_2
 							p.cost.cost-today Стоимость сегодня:
 								span#today-2!=today_2
-							+b('', 'button-cost', link_2, 'Выбрать','_blank', '#link-2')
+							+b('', 'button-cost', link_2, 'Выбрать','_blank', 'link-2')
+							|
+							|
+							<?php } else {;?>
+							p.cost.cost-full Стоимость:
+								span.unbroken!=full_2
+							+b('', 'button-cost', link_2, 'Выбрать','_blank')
+							|
+							|
+							<?php };?>
 				.col-md-4
-					.packet
+					.packet.packet-3
 						.packet-head
 							h4.packet-head-title
 								small пакет
@@ -80,23 +100,34 @@ section#packets
 						.packet-body
 							p.packet-body-text Для тех, кто хочет не только полностью овладеть навыками ДВ, считывать события, но и считывать человека, исцелять себя и других людей, лечить органы в теле с помощью тонкого двойника.
 								span Включает в себя: 
-								|  всё, что входит в пакеты СЕРЕБРО и ЗОЛОТО + 6 видеоуроков, 2 созвона, домашние задания с проверкой, чат поддержки с кураторами
-							p.packet-body-text
-								span ДВ-Медицина
 							ul.packet-body-list
-								li Считывание человека
-								li Считывание характера и эмоций человека
-								li Считывание окружения человека и его профессиональной деятельности. Совместимость
-								li Внутренняя архитектура человека
-								li Голографическая работа по решению проблем здоровья
+								li всё, что входит в пакеты СЕРЕБРО и ЗОЛОТО
+								li 6 видеоуроков
+								li 2 созвона
+								li домашние задания с проверкой
+								li чат поддержки с кураторами
 						.packet-footer
+							|
+							<?php if($now<$dates[1]){;?>
 							p.cost.cost-full Стоимость:
 								span!=full_3
 							p.cost.cost-sale Скидка:
 								span#sale-3!=sale_3
-						p.cost.cost-today Стоимость сегодня:
-							span#today-3!=today_3
-						+b('', 'button-cost', link_3, 'Выбрать','_blank', '#link-3')
+							p.cost.cost-today Стоимость сегодня:
+								span#today-3!=today_3
+							+b('', 'button-cost', link_3, 'Выбрать','_blank', 'link-3')
+							|
+							|
+							<?php } else {;?>
+							p.cost.cost-full Стоимость:
+								span.unbroken!=full_3
+							+b('', 'button-cost', link_3, 'Выбрать','_blank')
+							|
+							|
+							<?php };?>
+			|
+			|
+			<?php if($now < $dates[2]):?>
 			.prepayment
 				h4.prepayment-title Акция!!!
 				p.prepayment-text Платите 1 000р., бонусом получаете 
@@ -105,12 +136,15 @@ section#packets
 					| На счет зачисляется 
 					span#prepayment-credited 2 000р.
 				+b('button-center', 'prepayment-button', prepLink, 'Оплатить 1 000р.', '_blank', 'prepLink')
-			//- |
-			//- |
-			//- <?php if($now < $dates[2]):?>
+			|
+			|
+			<?php endif;?>
+			|
+			|
+			<?php if($now < $dates[1]):?>
 			.timer
 				h4.timer-title Скидка уменьшится через:
 				.clock
-			//- |
-			//- |
-			//- <?php endif;?>
+			|
+			|
+			<?php endif;?>

@@ -23,6 +23,10 @@ mixin gt(cl,h3)
 mixin imgs(cl,src,alt)
 	img(class=cl src=path+src alt=alt)
 
+
+<?php include('vars.php');?>
+|
+|
 doctype html
 html(lang="ru")
 	head
@@ -37,9 +41,10 @@ html(lang="ru")
 			include pug/course/4-after
 			include pug/course/5-prices
 			include pug/main/7-author
-			.back-wrap-1
-				include pug/main/8-revs
-				include pug/course/6-last
+			//- .back-wrap-1
+			include pug/main/8-revs
+			//- include pug/course/7-recs
+			include pug/course/6-last
 		include pug/base/2-footer
 		include pug/base/3-scripts
 		//- include pug/scripts/chat

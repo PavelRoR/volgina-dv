@@ -1,0 +1,43 @@
+section#records
+	.container
+		.content
+			+imgs('general-img general-img-recs-1', 'img/images/branch-main.png', 'Ветка')
+			|
+			|
+			<?php if($now < $dates[3]){;?>
+			+gt('general-title-green', 'Записи мастер-класса')
+			.row
+				.col-md-6
+					.video
+						h4.video-title Запись мастер-класса от 18.01.22
+						.video-wrapper.video-wrapper-video
+							iframe(src!="https://youtube.com/embed/<?=$videos[0];?>?&modestbranding=1" allofullscreen)
+						p.video-text(class!=" <?=$hides[0];?>") Занятие состоится 18.01.22 в 19:00(мск)
+						p.video-text(class!=" <?=$hides[0];?>") Запись занятия будет выложена здесь 19.01.22, после 13:00(мск)
+				.col-md-6
+					.video
+						h4.video-title Запись мастер-класса от 19.01.22
+						.video-wrapper.video-wrapper-video
+							iframe(src!="https://youtube.com/embed/<?=$videos[1];?>?&modestbranding=1" allofullscreen)
+						p.video-text(class!=" <?=$hides[1];?>") Занятие состоится 19.01.22 в 19:00(мск)
+						p.video-text(class!=" <?=$hides[1];?>") Запись занятия будет выложена здесь 20.01.22, после 13:00(мск)
+			.row
+				.col-md-6.col-md-offset-3
+					.video
+						h4.video-title Запись мастер-класса от 20.01.22
+						.video-wrapper.video-wrapper-video
+							iframe(src!="https://youtube.com/embed/<?=$videos[2];?>?&modestbranding=1" allofullscreen)
+						p.video-text(class!=" <?=$hides[2];?>") Занятие состоится 20.01.22 в 19:00(мск)
+						p.video-text(class!=" <?=$hides[2];?>") Запись занятия будет выложена здесь 21.01.22, после 13:00(мск)
+			|
+			|
+			<?php } else {;?>
+			h3.general-title Записей мастер-класса более нет 
+				span в свободном доступе
+			p.records-text Но Вы можете приобрести их полные версии всего за 590р. 
+				br
+				| и радоваться жизни вместе с теми, кто их уже смотрел
+			+b('button-wrapper-center', '', '', 'Купить записи', '_blank')
+			|
+			|
+			<?php }; ?>

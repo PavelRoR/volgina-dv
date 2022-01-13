@@ -45,37 +45,14 @@
 		z-index -1
 .main
 	&-pre
-		font-family: R
-		font-size: 20px
-		font-weight: bold
-		color: #D0B899
-		position relative
-		display inline-block
-		@media screen and (max-width 560px)
-			font-size: 18px
-		&:before
-			content: ''
-			display block
-			position absolute
-			width 269px
-			height 5px
-			background-color: #B2DFBE
-			bottom -10px
-			right -200px
-			@media screen and (max-width 1199px)
-				right -100px
-			@media screen and (max-width 991px)
-				width 169px
-			@media screen and (max-width 560px)
-				right 0 
-				left 0
-				margin 0 auto
-			@media screen and (max-width 386px)
-				width 69px
+		font-family: RW
+		font-size: 16px
+		margin-bottom: -20px
+		@media screen and (max-width 991px)
+			margin-bottom: 0
 	&-title
 		font-family: PD
 		font-size: 80px
-		margin 10px 0 20px
 		line-height: 80px
 		@media screen and (max-width 991px)
 			font-size: 60px
@@ -83,9 +60,45 @@
 			margin 25px 0
 		@media screen and (max-width 560px)
 			font-size: 42px
-			line-height: 1
+			line-height: 60px
 		@media screen and (max-width 386px)
 			font-size: 36px
+			line-height: 1
+		small
+			// margin 10px 0 20px
+			font-family: R
+			font-size: 20px
+			line-height: 20px
+			font-weight: bold
+			color: #D0B899
+			position relative
+			display inline-block
+			@media screen and (max-width 991px)
+				display block
+				width 170px
+				margin 0 auto
+			@media screen and (max-width 560px)
+				font-size: 18px
+				margin-bottom: 10px
+			&:before
+				content: ''
+				display block
+				position absolute
+				width 269px
+				height 5px
+				background-color: #B2DFBE
+				bottom -10px
+				right -200px
+				@media screen and (max-width 1199px)
+					right -100px
+				@media screen and (max-width 991px)
+					width 169px
+				@media screen and (max-width 560px)
+					right 0 
+					left 0
+					margin 0 auto
+				@media screen and (max-width 386px)
+					width 69px
 	&-subtitle
 		font-size: 22px
 		max-width 400px
@@ -119,10 +132,11 @@
 		justify-content: center
 		flex-direction: column
 		@media screen and (max-width 1199px)
-			bottom 220px
+			bottom 20px
+			right -60px
 		@media screen and (max-width 991px)
 			position: static
-			margin 20px auto 35px
+			margin 40px auto 0
 		@media screen and (max-width 560px)
 			width 200px
 			height: 200px
@@ -136,6 +150,7 @@
 				@media screen and (max-width 560px)
 					font-size: 24px
 					margin-bottom: 20px
+					width 100%
 				&:before
 					content: ''
 					display block
@@ -169,10 +184,15 @@
 			top 0
 			left 0
 			@media screen and (max-width 991px)
-				position: static
-				display block
-				width 100%
-				max-width 700px
-				margin 40px auto 0
+				top auto
+				bottom 0
+				left  auto
+				right -200px
+				width 350px
+				height: 350px
+			@media screen and (max-width 386px)
+				width 220px
+				height: 220px
+				border-width: 16px
 .button-main
 	margin-top: 50px
